@@ -29,7 +29,7 @@ To utilize this CommanderGPT, ensure the following dependencies are installed (Y
 - `python-pyaudio`
 - `espeak`
 
-You will also need an OpenAI API key. Update the `config.yml` file with your API key to establish a connection with the OpenAI language model.
+You will also need an OpenAI API key.
 
 ## Getting Started
 
@@ -77,7 +77,7 @@ https://github.com/theonlyfoxy/CommanderGPT/assets/12250394/3e62bc36-7784-45b2-b
 
 ## Todo
 
-- Feedback from Desktop: Improve the script to capture and process feedback from the desktop environment, enhancing the accuracy and reliability of voice commands and automation tasks. (PyAutoGUI LocateonScreen, Teseract OCR, Current Mouse Position Relative to OCR Position, Change X,Y Cordinates Based on Screenshot)
+- Feedback from Desktop: Improve the script to capture and process feedback from the desktop environment, enhancing the accuracy and reliability of voice commands and automation tasks. (PyAutoGUI LocateonScreen, Teseract OCR & Current Mouse Position Relative to Button, Change X/Y Cordinates Based on Screenshot)
 
 - Additional Features: Explore and implement additional features to expand the capabilities of the CommanderGPT system.
 
