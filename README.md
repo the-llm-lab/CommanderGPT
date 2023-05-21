@@ -71,7 +71,8 @@ Feel free to experiment with different commands and explore the limitless possib
 
 ## Video Example
 
-https://github.com/theonlyfoxy/CommanderGPT/assets/12250394/3e62bc36-7784-45b2-b1ec-53e58a5245b2
+https://github.com/theonlyfoxy/CommanderGPT/assets/12250394/8bed8d6f-46bb-4444-87a9-f015bcb9fbb4
+
 
 *Click the above to watch a video example showcasing the CommanderGPT in action.*
 
