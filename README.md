@@ -71,10 +71,7 @@ Feel free to experiment with different commands and explore the limitless possib
 
 ## Video Example
 
-<video width="640" height="360" controls>
-  <source src="media/demo.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+[!(Demo)](media/demo.mp4)
 
 *Click the above to watch a video example showcasing the CommanderGPT in action.*
 
