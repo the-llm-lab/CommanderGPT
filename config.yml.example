@@ -1,0 +1,5 @@
+API_Key: ""
+OS: "Fedora"
+Desktop_ENV: "GNOME"
+HOTWORD: "commander"
+Next_CMD_Delay: 10
