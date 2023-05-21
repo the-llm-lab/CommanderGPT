@@ -84,9 +84,8 @@ https://github.com/theonlyfoxy/CommanderGPT/assets/12250394/8bed8d6f-46bb-4444-8
 
 ## Limitations and Improvements
 
-- The provided code is a simplified version and may require further implementation to handle exceptions, provide robust error handling, and ensure secure and reliable execution.
-
-- Please note that the script assumes a GNOME desktop environment on Fedora. Modifying the generated Bash scripts may be necessary to support different desktop environments or operating systems.
+- The product provided is offered without any guarantees. The provider is not responsible for any damages and the user assumes all risks. By using the product, the user agrees to these terms.
+- Please note that the script by default assumes a GNOME desktop environment on Fedora. Modifying the code may be necessary to support different desktop environments or operating systems.
 
 ## License
 
