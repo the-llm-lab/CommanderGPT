@@ -18,6 +18,8 @@ Welcome to the CommanderGPT repository! This project harnesses the power of Open
 
 - **Enhanced Desktop Integration**: The script intelligently switches between windows and ensures the appropriate actions are performed in the correct desktop environment.
 
+- **Threat Intelligence**: If the command will likely cause harm to your computer, It will ask you If you would like to proceed.
+
 - **Cross Platform**: Works on Linux & Mac & Windows.
 
 ## Prerequisites

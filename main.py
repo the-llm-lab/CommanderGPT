@@ -20,6 +20,12 @@ preprompt_text = (
     f"My OS is {config['OS']} and My desktop environment is {config['Desktop_ENV']}. Always put delay between instructions. "
 )
 
+threat_preprompt_text = (
+    f"I want you to act like a Threat Intelligence. "
+    f"I will give you python script and you score the risk of the script execution from 0 to 10. "
+    f"Do not provide any explanation outside of the question, do not give an introduction or conclusion, just give me the plain numerical score with no explanations. "
+)
+
 engine = pyttsx3.init()
 
 # Parser
@@ -31,10 +37,44 @@ interactive_mode = args.interactive
 
 def voice_recognition():
     r = sr.Recognizer()
-    with sr.Microphone() as source:
-        print("Speak Now.")
-        audio = r.listen(source)
-    return r.recognize_google(audio)
+    while True:
+        with sr.Microphone() as source:
+            print("Speak Now.")
+            try:
+                audio = r.listen(source)
+                return r.recognize_google(audio)
+            except sr.UnknownValueError:
+                print("Could not understand audio")
+            except sr.RequestError as e:
+                print("Could not request results; {0}".format(e))
+            time.sleep(10)
+
+def threat_intelligence(python_code):
+        threat_result = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": threat_preprompt_text + python_code}]
+        )
+        threat_score = int(threat_result.choices[0].message.content)
+        print(threat_score)
+        if threat_score > 4:
+                engine.say("This is an Avengers Level Threat. Do you want to proceed?")
+                engine.runAndWait()
+                
+                if interactive_mode:
+                    if input("This is an Avengers Level Threat. Do you want to proceed? Type Yes/No:").lower() == "yes":
+                        return True
+                    else: 
+                        return False
+                else:
+                    if voice_recognition().lower() == "yes":
+                        return True
+                    else:
+                        return False
+        elif threat_score < 4:
+            return True
+        # Threat Level is Ambiguous
+        else:
+            return False
 
 
 def execute_command(python_code):
@@ -57,18 +97,9 @@ while True:
     if interactive_mode:
         prompt = input("Type your command here, or quit:")
     else:
-        try:
-            prompt = voice_recognition()
-            print(prompt)
-        except sr.UnknownValueError:
-            print("Could not understand audio")
-            time.sleep(10)
-            continue
-        except sr.RequestError as e:
-            print("Could not request results; {0}".format(e))
-            time.sleep(60)
-            continue
+        prompt = voice_recognition()
 
+        print(prompt)
         prompts.append(prompt)
 
         if HOTWORD in prompts[-1].lower():
@@ -90,6 +121,11 @@ while True:
 
         python_code = completion.choices[0].message.content.replace('super', 'win')
 
-        execute_command(python_code)
+        if threat_intelligence(python_code):
+            execute_command(python_code)
+        else:
+            engine.say("Execution Canceled")
+            engine.runAndWait()
+
 
     time.sleep(config["Next_CMD_Delay"])
