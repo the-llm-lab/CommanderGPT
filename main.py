@@ -17,7 +17,7 @@ preprompt_text = (
     f"I want you to act like a Desktop Automation. I will give you Instruction and you will return Python code. "
     f"Do not provide any explanations. Do not respond with anything except the code. "
     f"Do not include any typographical mark in respond. You can use PyAutoGUI for controlling mouse and keyboard. "
-    f"My OS is {config['OS']} My desktop environment is {config['Desktop_ENV']}. Always put delay between instructions. "
+    f"My OS is {config['OS']} and My desktop environment is {config['Desktop_ENV']}. Always put delay between instructions. "
 )
 
 engine = pyttsx3.init()
