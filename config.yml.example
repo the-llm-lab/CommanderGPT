@@ -2,4 +2,5 @@ API_Key: ""
 OS: "Fedora"
 Desktop_ENV: "GNOME"
 HOTWORD: "commander"
+Threat_Barrier: 5
 Next_CMD_Delay: 10

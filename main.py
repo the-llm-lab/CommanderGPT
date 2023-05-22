@@ -55,8 +55,7 @@ def threat_intelligence(python_code):
             messages=[{"role": "user", "content": threat_preprompt_text + python_code}]
         )
         threat_score = int(threat_result.choices[0].message.content)
-        print(threat_score)
-        if threat_score > 4:
+        if threat_score > config["Threat_Barrier"]:
                 engine.say("This is an Avengers Level Threat. Do you want to proceed?")
                 engine.runAndWait()
                 
@@ -70,7 +69,7 @@ def threat_intelligence(python_code):
                         return True
                     else:
                         return False
-        elif threat_score < 4:
+        elif threat_score < config["Threat_Barrier"]:
             return True
         # Threat Level is Ambiguous
         else:
