@@ -18,18 +18,25 @@ Welcome to the CommanderGPT repository! This project harnesses the power of Open
 
 - **Enhanced Desktop Integration**: The script intelligently switches between windows and ensures the appropriate actions are performed in the correct desktop environment.
 
-- **Threat Intelligence**: If the command will likely cause harm to your computer, It will ask you If you would like to proceed.
+- **Threat Intelligence**: If the command will likely cause harm to your computer, It will ask you If you would like to proceed. You can adjust Threat barrier level.
 
 - **Cross Platform**: Works on Linux & Mac & Windows.
 
 ## Prerequisites
 
-To utilize this CommanderGPT, ensure the following dependencies are installed (You can install them using your Distro Package Manager):
+To utilize this CommanderGPT, ensure the following dependencies are installed.
 
-- Python 3.x
+Linux:
+- Python 3.10
 - `python3-devel`
 - `python-pyaudio`
 - `espeak`
+
+Mac:
+- Python 3.10
+
+Windows:
+- Python 3.10
 
 You will also need an OpenAI API key.
 
